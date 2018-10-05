@@ -1,0 +1,27 @@
+<ResultItem>:
+    spacing: 5
+    size_hint_y: None
+    height: 25
+    canvas.before:
+        Color:
+            rgba: 1., 1., 1., 1.0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        id: sn
+        text: root.sn
+        size_hint_x: 0.1
+        color: 0,0,0,1
+    Label:
+        id: chracters
+        text: root.chracters
+        color: 0,0,0,1
+    Label:
+        id: confidence
+        text: root.confidence
+        color: 0,0,0,1
+    Label:
+        id: recog_time
+        text: root.recog_time
+        color: 0,0,0,1

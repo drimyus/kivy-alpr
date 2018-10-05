@@ -1,0 +1,105 @@
+<AlprScreen>
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba: .5, .5, .5, 1.0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            id: lbl_title_bar
+            text: "A Robust Automatic License Plate Recognition System"
+            size_hint: (1.0, 0.05)
+            pos_hint: {'x':0.0, 'y':0.95}
+        Button:
+            id: btn_load
+            text: "Select Image"
+            size_hint: (0.1, 0.05)
+            pos_hint: {'x':0.03, 'y':0.8}
+            on_release: root.on_btn_open()
+        Button:
+            id: btn_recog
+            text: "Recognize"
+            size_hint: (0.1, 0.05)
+            pos_hint: {'x':0.03, 'y':0.7}
+            on_release: root.on_btn_recog()
+        Button:
+            id: btn_clear
+            text: "Clear"
+            size_hint: (0.1, 0.05)
+            pos_hint: {'x':0.13, 'y':0.7}
+            on_release: root.on_btn_clear()
+        Image:
+            id: img_crop
+            allow_stretch: True
+            size_hint: (0.2, 0.17)
+            pos_hint: {'x':0.03, 'y':0.45}
+            animation_offset: 0.1
+            canvas.before:
+                Color:
+                    rgba: 1., 1., 1., 1.0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Image:
+            id: img_show
+            allow_stretch: True
+            size_hint: (0.5, 0.5)
+            pos_hint: {'x':0.25, 'y':0.45}
+            animation_offset: 0.1
+            canvas.before:
+                Color:
+                    rgba: 1., 1., 1., 1.0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Image:
+            id: img_gray
+            allow_stretch: True
+            size_hint: (0.21, 0.24)
+            pos_hint: {'x':0.77, 'y':0.71}
+            animation_offset: 0.1
+            canvas.before:
+                Color:
+                    rgba: 1., 1., 1., 1.0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Image:
+            id: img_binary
+            allow_stretch: True
+            size_hint: (0.21, 0.24)
+            pos_hint: {'x':0.77, 'y':0.45}
+            animation_offset: 0.1
+            canvas.before:
+                Color:
+                    rgba: 1., 1., 1., 1.0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        BoxLayout:
+            id: result_box
+            orientation: "vertical"
+            size_hint: 0.75, 0.25
+            pos_hint: {'x':0.03, 'y':0.05}
+            canvas.before:
+                Color:
+                    rgba: 1., 1., 1., 1.0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            id: btn_save
+            text: "Export Result"
+            size_hint: (0.1, 0.05)
+            pos_hint: {'x':0.83, 'y':0.15}
+            on_release: root.btn_save()
+
+
+#    Button:
+#        id: btn_load
+#        text: "select images ..."
+#        size_hint: {0.1, 0.2}
+#        pos_hint: {0.5, 0.6}
