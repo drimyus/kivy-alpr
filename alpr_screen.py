@@ -4,6 +4,14 @@ import cv2
 import numpy as np
 import gc
 import threading
+
+
+# for windows
+# import win32api
+
+
+os.environ['KIVY_GL_BACKEND'] = 'sdl2'
+from kivy.core.window import Window
 from kivy import Config
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
